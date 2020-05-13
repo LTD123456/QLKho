@@ -8,19 +8,19 @@ namespace QLKho.Data.EF
 {
     public class QLKhoDbContext : DbContext
     {
-        public QLKhoDbContext(DbContextOptions options) : base(options)
-        {
-            //IConfigurationRoot configuration = new ConfigurationBuilder()
-            //    .SetBasePath(Directory.GetCurrentDirectory())
-            //    .AddJsonFile("appsettings.json")
-            //    .Build();
-        }
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-        }
+        //public QLKhoDbContext(DbContextOptions options) : base(options)
+        //{
+        //    //IConfigurationRoot configuration = new ConfigurationBuilder()
+        //    //    .SetBasePath(Directory.GetCurrentDirectory())
+        //    //    .AddJsonFile("appsettings.json")
+        //    //    .Build();
+        //}
+        //protected override void OnModelCreating(ModelBuilder modelBuilder)
+        //{
+        //}
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=LTHIENDUC\SQLEXPRESS;Database=SchoolDB;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Data Source=LTHIENDUC\SQLEXPRESS;Initial Catalog=QLKhoDB;Integrated Security=True");
         }
         public DbSet<Item> Items { get; set; }
         public DbSet<Unit> Units { get; set; }
