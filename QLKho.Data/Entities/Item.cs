@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace QLKho.Database.Entities
+namespace QLKho.Data.Entities
 {
-    public class Object
+    public class Item
     {
         public string Id{ get; set; }
         public string DisplayName{ get; set; }
