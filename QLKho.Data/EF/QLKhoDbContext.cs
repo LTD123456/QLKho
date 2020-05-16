@@ -69,7 +69,7 @@ namespace QLKho.Data.EF
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=LTHIENDUC\SQLEXPRESS;Initial Catalog=QLKhoDB;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-EH88R88\MSSQLSERVER2016;Initial Catalog=QLKhoDB;Integrated Security=True");
         }
         public DbSet<Item> Items { get; set; }
         public DbSet<Unit> Units { get; set; }
