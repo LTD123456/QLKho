@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QLKho.Data.EF;
 
 namespace QLKho.Data.Migrations
 {
     [DbContext(typeof(QLKhoDbContext))]
-    partial class QLKhoDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200514075142_CreateFluentAPI_v1")]
+    partial class CreateFluentAPI_v1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
