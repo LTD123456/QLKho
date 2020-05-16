@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QLKho.Data.Entities;
 using System;
 using System.Collections.Generic;
@@ -6,15 +7,15 @@ using System.Text;
 
 namespace QLKho.Data.EF
 {
-    public class QLKhoDbContext : DbContext
+    public class QLKhoDbContext : IdentityDbContext
     {
-        //public QLKhoDbContext(DbContextOptions options) : base(options)
-        //{
-        //    //IConfigurationRoot configuration = new ConfigurationBuilder()
-        //    //    .SetBasePath(Directory.GetCurrentDirectory())
-        //    //    .AddJsonFile("appsettings.json")
-        //    //    .Build();
-        //}
+        public QLKhoDbContext(DbContextOptions options) : base(options)
+        {
+            //IConfigurationRoot configuration = new ConfigurationBuilder()
+            //    .SetBasePath(Directory.GetCurrentDirectory())
+            //    .AddJsonFile("appsettings.json")
+            //    .Build();
+        }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             //Customer
