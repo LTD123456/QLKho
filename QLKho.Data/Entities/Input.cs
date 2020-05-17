@@ -14,5 +14,7 @@ namespace QLKho.Data.Entities
         public DateTime DateInput { get; set; }
         //set InputInfo
         public ICollection<InputInfo> InputInfos { get; set; }
+        public Guid IdUser{ get; set; }
+        public User User{ get; set; }
     }
 }

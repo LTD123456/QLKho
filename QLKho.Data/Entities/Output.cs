@@ -15,5 +15,8 @@ namespace QLKho.Data.Entities
         //set Outputinfo
         public ICollection<OutputInfo> OutputInfos{ get; set; }
 
+        public Guid IdUser{ get; set; }
+        public User User { get; set; }
+
     }
 }
