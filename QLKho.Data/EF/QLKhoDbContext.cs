@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using QLKho.Data.Entities;
 using System;
@@ -7,7 +8,7 @@ using System.Text;
 
 namespace QLKho.Data.EF
 {
-    public class QLKhoDbContext : IdentityDbContext
+    public class QLKhoDbContext : IdentityDbContext<User,Role,Guid>
     {
         public QLKhoDbContext(DbContextOptions options) : base(options)
         {
@@ -66,12 +67,31 @@ namespace QLKho.Data.EF
                 .HasMany<Item>(i => i.Items)
                 .WithOne(u => u.Unit)
                 .HasForeignKey(f => f.IdUnit);
+            //User
+            modelBuilder.Entity<User>().ToTable("Users").HasKey(u => u.Id);
+            modelBuilder.Entity<User>()
+                .HasMany<Input>(i => i.Inputs)
+                .WithOne(u => u.User)
+                .HasForeignKey(f => f.IdUser);
+            modelBuilder.Entity<User>()
+                .HasMany<Output>(o => o.Outputs)
+                .WithOne(u => u.User)
+                .HasForeignKey(f => f.IdUser);
+            //Role
+            modelBuilder.Entity<Role>().ToTable("Roles").HasKey(r => r.Id);
+            modelBuilder.Entity<Role>().Property(r => r.Notes).IsRequired();
+
+            modelBuilder.Entity<IdentityUserClaim<Guid>>().ToTable("UserClaims");
+            modelBuilder.Entity<IdentityUserRole<Guid>>().ToTable("UserRoles").HasKey(o=>new { o.UserId, o.RoleId});
+            modelBuilder.Entity<IdentityUserLogin<Guid>>().ToTable("UserLogins").HasKey(o=>o.UserId);
+            modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("RoleClaims");
+            modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("UserTokens").HasKey(o=>o.UserId);
                
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-EH88R88\MSSQLSERVER2016;Initial Catalog=QLKhoDB;Integrated Security=True");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer();
+        //}
         public DbSet<Item> Items { get; set; }
         public DbSet<Unit> Units { get; set; }
         public DbSet<Suplier> Supliers { get; set; }
