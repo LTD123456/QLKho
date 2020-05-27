@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QLKho.Data", "QLKho.Data\QL
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "QLKho.WebCore", "QLKho.Service\QLKho.WebCore.csproj", "{7E807263-ED58-4A32-85B4-CEEC4614E49A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QLKho.WebAPI", "QLKho.WebAPI\QLKho.WebAPI.csproj", "{AEE17BD7-7845-49C2-817A-BC2B873E3EC4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{7E807263-ED58-4A32-85B4-CEEC4614E49A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E807263-ED58-4A32-85B4-CEEC4614E49A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E807263-ED58-4A32-85B4-CEEC4614E49A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AEE17BD7-7845-49C2-817A-BC2B873E3EC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE17BD7-7845-49C2-817A-BC2B873E3EC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE17BD7-7845-49C2-817A-BC2B873E3EC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE17BD7-7845-49C2-817A-BC2B873E3EC4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
