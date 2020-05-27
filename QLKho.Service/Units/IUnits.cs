@@ -10,11 +10,11 @@ namespace QLKho.Service.Units
     {
         int Add(Unit unit);
         int Update(Unit unit);
-        int UpdateRange(ICollection<Unit> listUnit);
+        int UpdateRange(IEnumerable<Unit> listUnit);
         //int AddOrUpdate()
-        int Delete(string Id);
-        ICollection<Unit> GetAll();
-        Unit GetByKey(string Key);
+        int Delete(Unit unit);
+        IEnumerable<Unit> GetAll();
+        Unit GetByKey(string unit);
         PageViewModel<Unit> GetAllPaging(string key = "", int pageIndex = 1, int pageSize = 50);
     }
 }
