@@ -24,6 +24,13 @@ namespace QLKho.WebCore.Units
             return 1;
         }
 
+        public int AddRange(ICollection<Unit> listUnit)
+        {
+            _repository.AddRange<Unit>(listUnit);
+            _unitOfWork.SaveChages();
+            return 1;
+        }
+
         public int Delete(Unit unit)
         {
             _repository.Delete<Unit>(unit);
@@ -56,7 +63,11 @@ namespace QLKho.WebCore.Units
 
         public int UpdateRange(IEnumerable<Unit> listUnit)
         {
-            throw new NotImplementedException();
+            foreach(var item in listUnit)
+            {
+                _repository.Update<Unit>(item);
+            }
+            return 1;
         }
     }
 }

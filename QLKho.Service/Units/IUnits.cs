@@ -11,6 +11,7 @@ namespace QLKho.Service.Units
         int Add(Unit unit);
         int Update(Unit unit);
         int UpdateRange(IEnumerable<Unit> listUnit);
+        int AddRange(ICollection<Unit> listUnit);
         //int AddOrUpdate()
         int Delete(Unit unit);
         IEnumerable<Unit> GetAll();
